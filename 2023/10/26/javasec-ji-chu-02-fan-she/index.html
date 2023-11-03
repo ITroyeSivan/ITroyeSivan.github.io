@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Troy3e">
+    <meta name="keywords" content="JavaSec基础02-反射, Troy3e">
     <meta name="description" content="参考链接：https://wx.zsxq.com/dweb2/index/group/2212251881
 Java安全可以从反序列化漏洞开始说起，反序列化漏洞⼜可以从反射开始说起。
 基础通过Java反射机制，可以在程序中访问已经装载到JV">
@@ -19,9 +19,18 @@ Java安全可以从反序列化漏洞开始说起，反序列化漏洞⼜可以�
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Troy3e</title>
+    <title>JavaSec基础02-反射 | Troy3e</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/favicon.png">
     
+    <style>
+        body{
+            background-image: url(https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031949304.png);
+            background-repeat:no-repeat;
+            background-size: 100% 100%;
+            background-attachment:fixed;
+        }
+    </style>
+
 
 
     <!-- bg-cover style     -->
@@ -116,39 +125,6 @@ Java安全可以从反序列化漏洞开始说起，反序列化漏洞⼜可以�
     
   </li>
   
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/about" class="waves-effect waves-light">
-      
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
-      
-      <span>About</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>Contact</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
-    <a href="/friends" class="waves-effect waves-light">
-      
-      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
-      
-      <span>Friends</span>
-    </a>
-    
-  </li>
-  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
@@ -218,39 +194,6 @@ Java安全可以从反序列化漏洞开始说起，反序列化漏洞⼜可以�
 			    <i class="fa-fw fas fa-archive"></i>
 			
 			Archives
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/about" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-user-circle"></i>
-			
-			About
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			Contact
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/friends" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-address-book"></i>
-			
-			Friends
 		</a>
           
         </li>
@@ -331,15 +274,28 @@ Java安全可以从反序列化漏洞开始说起，反序列化漏洞⼜可以�
 </header>
 
     
+<script src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/medias/featureimages/0.jpg')">
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031937703.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">JavaSec基础02-反射</h1>
                 </div>
             </div>
         </div>
@@ -361,12 +317,25 @@ Java安全可以从反序列化漏洞开始说起，反序列化漏洞⼜可以�
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaSec/">
+                                <span class="chip bg-color">JavaSec</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaSec/" class="post-category">
+                                JavaSec
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -851,7 +820,11 @@ objectClass.getDeclaredMethod(&quot;print&quot;, new Class[] &#123;String.class,
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">No tag</span>
+                            
+                                <a href="/tags/JavaSec/">
+                                    <span class="chip bg-color">JavaSec</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -895,18 +868,16 @@ objectClass.getDeclaredMethod(&quot;print&quot;, new Class[] &#123;String.class,
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2023/10/26/javasec-ji-chu-02-fan-she/">
+                <a href="/2023/11/03/javasec-ji-chu-03-rmi/">
                     <div class="card-image">
                         
+                        <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031948821.png" class="responsive-img" alt="JavaSec基础03-RMI">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">JavaSec基础03-RMI</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -916,18 +887,29 @@ objectClass.getDeclaredMethod(&quot;print&quot;, new Class[] &#123;String.class,
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-03
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Troy3e
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaSec/" class="post-category">
+                                    JavaSec
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaSec/">
+                        <span class="chip bg-color">JavaSec</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -941,10 +923,9 @@ objectClass.getDeclaredMethod(&quot;print&quot;, new Class[] &#123;String.class,
                 <a href="/2023/10/26/javasec-ji-chu-01-io-liu/">
                     <div class="card-image">
                         
+                        <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031931020.jpg" class="responsive-img" alt="JavaSec基础01-IO流">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">JavaSec基础01-IO流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -959,11 +940,23 @@ objectClass.getDeclaredMethod(&quot;print&quot;, new Class[] &#123;String.class,
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Troy3e
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaSec/" class="post-category">
+                                    JavaSec
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaSec/">
+                        <span class="chip bg-color">JavaSec</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -1090,67 +1083,13 @@ objectClass.getDeclaredMethod(&quot;print&quot;, new Class[] &#123;String.class,
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/aplayer/Meting.min.js"></script>
-
-    
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2023</span>
+                <span id="year">2023</span>
             
             <a href="/about" target="_blank">Troy3e</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
@@ -1159,7 +1098,7 @@ objectClass.getDeclaredMethod(&quot;print&quot;, new Class[] &#123;String.class,
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">6.4k</span>
+                        class="white-color">11.1k</span>
             
             
             
@@ -1180,6 +1119,60 @@ objectClass.getDeclaredMethod(&quot;print&quot;, new Class[] &#123;String.class,
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2023";
+                        var startMonth = "10";
+                        var startDate = "26";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'en';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             
