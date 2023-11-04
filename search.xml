@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>WebGoat01-General</title>
+      <link href="/2023/11/04/webgoat01-general/"/>
+      <url>/2023/11/04/webgoat01-general/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>WebGoat是一个故意的不安全应用，让感兴趣的开发者在基于Java的热门开源应用上测试漏洞。</p><p>安装：<img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311041447881.png" alt="image-20231104144745792"></p><h1 id="General"><a href="#General" class="headerlink" title="General"></a>General</h1><h2 id="HTTP-Basics"><a href="#HTTP-Basics" class="headerlink" title="HTTP Basics"></a>HTTP Basics</h2><h3 id="1、HttpBasics"><a href="#1、HttpBasics" class="headerlink" title="1、HttpBasics"></a>1、HttpBasics</h3><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202310312147357.png"></p><h3 id="2、HttpBasicsLesson"><a href="#2、HttpBasicsLesson" class="headerlink" title="2、HttpBasicsLesson"></a>2、HttpBasicsLesson</h3><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202310312153656.png"></p><h3 id="3、HttpBasicsQuiz"><a href="#3、HttpBasicsQuiz" class="headerlink" title="3、HttpBasicsQuiz"></a>3、HttpBasicsQuiz</h3><p>查看源码：</p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202310312154070.png"></p><p>显然，需要POST方式并且magic_answer等于magic_num.抓包修改即可：</p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202310312201155.png"></p><h2 id="HTTP-Proxies"><a href="#HTTP-Proxies" class="headerlink" title="HTTP Proxies"></a>HTTP Proxies</h2><p>代理是将HTTP客户端连接到后端资源的转发器应用程序。HTTP客户端可以是浏览器或应用程序，如curl、SOAP UI、Postman等。通常，当客户端本身没有直接连接到互联网时，这些代理用于路由和获取互联网访问。因此，在测试应用程序时，HTTP代理也是理想的。您始终可以使用代理日志记录来查看从客户端到服务器的实际发送内容。因此，您可以检查请求和响应头以及XML、JSON或其他有效负载。</p><p>HTTP代理从客户端接收请求并中继它们。他们通常也会记录它们。他们充当中间人。它甚至可以在有或没有HTTPS的情况下正常工作，只要您的客户端或浏览器信任HTTP代理的证书。</p><p>前几步都是教你怎么装ZAP，因为用惯Burp就不装了，直接跳过。</p><h3 id="1、Lesson5"><a href="#1、Lesson5" class="headerlink" title="1、Lesson5"></a>1、Lesson5</h3><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311041533893.png"></p><p>POST改GET，加个请求头，再改一下参数即可。</p><h2 id="Developer-Tools"><a href="#Developer-Tools" class="headerlink" title="Developer Tools"></a>Developer Tools</h2><p>教你如何使用F12。</p><h2 id="CIA-Triad"><a href="#CIA-Triad" class="headerlink" title="CIA Triad"></a>CIA Triad</h2><p>CIA Triad（机密性、完整性、可用性）是信息安全的一个模型。三元组的三个元素被认为是最关键的信息安全组件，应在任何安全系统中予以保证。</p><p>即使违反其中一个要素，也可能造成严重后果。</p><p>创建CIA Triad是为了提供评估和实施安全性的基线标准，而不管底层系统和&#x2F;或组织如何。</p><h2 id="Writing-new-lesson"><a href="#Writing-new-lesson" class="headerlink" title="Writing new lesson"></a>Writing new lesson</h2><p>略。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaSec </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaSec </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaSec基础04-反序列化</title>
       <link href="/2023/11/03/javasec-ji-chu-04-fan-xu-lie-hua/"/>
       <url>/2023/11/03/javasec-ji-chu-04-fan-xu-lie-hua/</url>
