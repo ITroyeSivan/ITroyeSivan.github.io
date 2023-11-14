@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Troy3e">
+    <meta name="keywords" content="标签: WebGoat, Troy3e">
     <meta name="description" content="Troy3e">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Troy3e</title>
+    <title>标签: WebGoat | Troy3e</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/favicon.png">
     
     <style>
@@ -31,48 +31,7 @@
 
 
 
-    <!-- index cover -->
-    <!-- <link rel="stylesheet preload" type="text/css" href="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/css/indexcover.css"> -->
-    <style>
-        .carousel-control {
-            width: 45px;
-            height: 45px;
-            line-height: 55px;
-            border-radius: 45px;
-            background: transparent;
-            cursor: pointer;
-            z-index: 100;
-        }
-        
-        #prev-cover {
-            position: absolute;
-            top: 48%;
-            left: 8px;
-        }
-        
-        #next-cover {
-            position: absolute;
-            top: 48%;
-            right: 8px;;
-        }
-        
-        #prev-cover i {
-            margin-right: 3px;
-        }
-        
-        #next-cover i {
-            margin-left: 3px;
-        }
-        
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, .4);
-        }
-        
-        .carousel-control i {
-            color: #fff;
-            font-size: 2.4rem;
-        }
-    </style>
+    <!-- bg-cover style     -->
 
 
 
@@ -93,6 +52,8 @@
 
 
 
+
+    
 
 
 
@@ -288,15 +249,9 @@
 
 </header>
 
-    
-
-
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item  white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
         <div class="brand">
             <div class="title center-align">
@@ -320,230 +275,61 @@
 </script>
 
 
-
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
-                </a>
-
-                
-                    <a href="https://github.com/ITroyeSivan" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github "></i>Fork Me
-                    </a>
-                
-            </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/ITroyeSivan" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:1220101668@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1220101668" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1220101668" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-</div>
-        </div>
     </div>
-
-    
 </div>
-
-<script>
-    $(function () {
-        let coverSlider = $('.carousel');
-
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
-        }
-
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
-
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
-
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
-
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
-    });
-</script>
-
-
 
 <main class="content">
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;Hi,I&#39;m Troy3e.
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            I&#39;m currently learning JavaSec and Penetration Test.
+
+<div id="tags" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;文章标签
+            </div>
+            <div class="tag-chips">
+                
+                
+                <a href="/tags/JavaSec/" title="JavaSec: 9">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="JavaSec" style="background-color: #F9EBEA;">JavaSec
+                        <span class="tag-length">9</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/WebGoat/" title="WebGoat: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active "
+                            data-tagname="WebGoat" style="background-color: #F5EEF8;">WebGoat
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
+                
+            </div>
         </div>
     </div>
 </div>
 
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
     
 
-    
-
-    <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
-        <div class="row article-row">
+        <div class="row tags-posts">
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/11/14/javasec-ji-chu-06-lei-de-dong-tai-jia-zai/">
-                        <div class="card-image">
-                            
-                            <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311141948017.jpeg" class="responsive-img" alt="JavaSec基础06-类的动态加载">
-                            
-                            <span class="card-title">JavaSec基础06-类的动态加载</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                类加载一、类加载过程程序员编写的Java源程序（.java文件）在经过编译器编译之后被转换成字节代码（.class 文件），类加载器将.class文件中的二进制数据读入到内存中，将其放在方法区内，然后在堆区创建一个java.lang.Cla
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="JavaSec, WebGoat" data-aos="fade-up">
                 <div class="card">
                     <a href="/2023/11/14/webgoat02-broken-access-control/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311142017287.png" class="responsive-img" alt="WebGoat02-Broken Access Control">
                             
                             <span class="card-title">WebGoat02-Broken Access Control</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Broken Access ControlHijack a session开发自己的会话ID的应用程序开发人员经常忘记结合安全性所必需的复杂性和随机性。如果用户特定的会话ID不是复杂和随机的，那么应用程序很容易受到基于会话的暴力攻击。
-目标
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
@@ -553,154 +339,28 @@
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
+                                JavaSec
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                        <a href="/tags/WebGoat/">
-                            <span class="chip bg-color">WebGoat</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/11/11/javasec-ji-chu-05-jdk-dong-tai-dai-li/">
-                        <div class="card-image">
-                            
-                            <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311141948804.png" class="responsive-img" alt="JavaSec基础05-JDK动态代理">
-                            
-                            <span class="card-title">JavaSec基础05-JDK动态代理</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                好像用处不大，但是反序列化会用到，就简单学习一下。
-Java的代理模式定义：为其他对象提供一种代理以控制对这个对象的访问。
-
-1、静态代理以租房为例，我们一般用租房软件、找中介或者找房东。这里的中介就是代理者。
-Rent.java：这是一个
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-11
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/11/07/urldns-lian-fen-xi/">
-                        <div class="card-image">
-                            
-                            <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311072059335.png" class="responsive-img" alt="URLDNS链分析">
-                            
-                            <span class="card-title">URLDNS链分析</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                ysoserial在说反序列化漏洞利⽤链前，我们跳不过⼀个⾥程碑式的工具，ysoserial。
-反序列化漏洞在各个语⾔⾥本不是⼀个新鲜的名词，但2015年Gabriel Lawrence (@gebl)和ChrisFrohoff (@fro
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-07
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4" data-tags="JavaSec, WebGoat" data-aos="fade-up">
                 <div class="card">
                     <a href="/2023/11/04/webgoat01-general/">
-                        <div class="card-image">
+                        <div class="card-image tag-image">
                             
                             <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311041640695.png" class="responsive-img" alt="WebGoat01-General">
                             
                             <span class="card-title">WebGoat01-General</span>
                         </div>
                     </a>
-
                     <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                简介WebGoat是一个故意的不安全应用，让感兴趣的开发者在基于Java的热门开源应用上测试漏洞。
-安装：
-GeneralHTTP Basics1、HttpBasics
-2、HttpBasicsLesson
-3、HttpBasicsQuiz
-                            
-                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="far fa-clock fa-fw icon-date"></i>2023-11-04
@@ -710,230 +370,18 @@ GeneralHTTP Basics1、HttpBasics
                                 <i class="fas fa-bookmark fa-fw icon-category"></i>
                                 
                                 <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
+                                JavaSec
                                 </a>
                                 
                                 
                             </span>
                         </div>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                        <a href="/tags/WebGoat/">
-                            <span class="chip bg-color">WebGoat</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/11/03/javasec-ji-chu-04-fan-xu-lie-hua/">
-                        <div class="card-image">
-                            
-                            <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031949810.jpeg" class="responsive-img" alt="JavaSec基础04-反序列化">
-                            
-                            <span class="card-title">JavaSec基础04-反序列化</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                1. 概述1.1 序列化与反序列化Java序列化是指把Java对象转换为字节序列的过程；而Java反序列化是指把字节序列恢复为Java对象的过程。
-序列化分为两大部分：序列化和反序列化。序列化是这个过程的第一部分，将数据分解成字节流，以便存
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/11/03/javasec-ji-chu-03-rmi/">
-                        <div class="card-image">
-                            
-                            <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031948821.png" class="responsive-img" alt="JavaSec基础03-RMI">
-                            
-                            <span class="card-title">JavaSec基础03-RMI</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                RMI全称是Remote Method Invocation，远程方法调用。  
-基础概述简介RMI 是 Java 提供的一个完善的简单易用的远程方法调用框架，采用客户&#x2F;服务器通信方式，在服务器上部署了提供各种服务的远程对象，客户
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-03
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/10/26/javasec-ji-chu-02-fan-she/">
-                        <div class="card-image">
-                            
-                            <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031937703.png" class="responsive-img" alt="JavaSec基础02-反射">
-                            
-                            <span class="card-title">JavaSec基础02-反射</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                参考链接：https://wx.zsxq.com/dweb2/index/group/2212251881
-Java安全可以从反序列化漏洞开始说起，反序列化漏洞⼜可以从反射开始说起。
-基础这个师傅写的不错：https://drun1baby
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-26
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
-            
-             <!-- 隐藏某个文章 -->
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/10/26/javasec-ji-chu-01-io-liu/">
-                        <div class="card-image">
-                            
-                            <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031931020.jpg" class="responsive-img" alt="JavaSec基础01-IO流">
-                            
-                            <span class="card-title">JavaSec基础01-IO流</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Java-I&#x2F;O流基础在变量、数组和对象中存储的数据是暂时存在的，程序结束后它们就会被丢失。想要永久地存储程序创建的数据，就需要将其保存在磁盘文件中，而只有数据被存储起来，在其他程序中才可以使用它们。Java的I&#x2F;O技术
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-26
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/JavaSec/">
-                            <span class="chip bg-color">JavaSec</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-              <!-- 隐藏某个文章 -->
             
         </div>
     </article>
-
 </main>
 
 
