@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Java代码审计知识框架</title>
+      <link href="/2023/12/24/java-dai-ma-shen-ji-zhi-shi-kuang-jia/"/>
+      <url>/2023/12/24/java-dai-ma-shen-ji-zhi-shi-kuang-jia/</url>
+      
+        <content type="html"><![CDATA[<p>一直对Java代码审计没有一个系统的学习计划，今天在b站上看到了一个还不错的课程，于是自费九块九买下该课程。其实主要是为了这张图，可以将它稍作改编作为自己未来的学习计划。</p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/JAVA%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1%E7%9F%A5%E8%AF%86%E6%A1%86%E6%9E%B6%20.png"></p><p>接下来分部分展示一下。</p><h1 id="一、Java基础"><a href="#一、Java基础" class="headerlink" title="一、Java基础"></a>一、Java基础</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224144346.png"></p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224144455.png"></p><h1 id="二、Java语言特性"><a href="#二、Java语言特性" class="headerlink" title="二、Java语言特性"></a>二、Java语言特性</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224144623.png"></p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224144638.png"></p><h1 id="三、Java设计模式"><a href="#三、Java设计模式" class="headerlink" title="三、Java设计模式"></a>三、Java设计模式</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224144705.png"></p><h1 id="四、OWASP-TOP-10"><a href="#四、OWASP-TOP-10" class="headerlink" title="四、OWASP TOP 10"></a>四、OWASP TOP 10</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224145253.png"></p><h1 id="五-、Java框架漏洞"><a href="#五-、Java框架漏洞" class="headerlink" title="五 、Java框架漏洞"></a>五 、Java框架漏洞</h1><p>常用框架、组件：</p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224145331.png"></p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224145348.png"></p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224145402.png"></p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224145459.png"></p><p>其它生态组件：</p><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224145524.png"></p><h1 id="六、JVM技术"><a href="#六、JVM技术" class="headerlink" title="六、JVM技术"></a>六、JVM技术</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224145604.png"></p><h1 id="七、自动化漏洞挖掘"><a href="#七、自动化漏洞挖掘" class="headerlink" title="七、自动化漏洞挖掘"></a>七、自动化漏洞挖掘</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/20231224145635.png"></p><h1 id="八、待定"><a href="#八、待定" class="headerlink" title="八、待定"></a>八、待定</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaSec </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaSec </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CC链7-CommonsCollections7利用链分析</title>
       <link href="/2023/12/17/cc-lian-7-commonscollections7-li-yong-lian-fen-xi/"/>
       <url>/2023/12/17/cc-lian-7-commonscollections7-li-yong-lian-fen-xi/</url>

@@ -4,14 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="WebGoat03-Cryptographic Failures, Troy3e">
-    <meta name="description" content="这一关介绍了Web应用中的常见加密技术，快速过一遍。
-一、Base64会用在线网站就行：https://base64.us/
-二、其他的编码
-xor那个网站默认密钥是_。
-三、Hash
-第一个是md5，admin
-第二个是SHA-256，s">
+    <meta name="keywords" content="Troy3e">
+    <meta name="description" content="Troy3e">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +17,7 @@ xor那个网站默认密钥是_。
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>WebGoat03-Cryptographic Failures | Troy3e</title>
+    <title>Troy3e</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/favicon.png">
     
     <style>
@@ -58,8 +52,6 @@ xor那个网站默认密钥是_。
 
 
 
-
-    
 
 
 
@@ -256,467 +248,122 @@ xor那个网站默认密钥是_。
 </header>
 
     
-<script src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/cryptojs/crypto-js.min.js"></script>
-<script>
-    (function() {
-        let pwd = '';
-        if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
-                alert('密码错误，将返回主页！');
-                location.href = '/';
-            }
-        }
-    })();
-</script>
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    subtitle
+                
+            </div>
 
-
-
-
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311212150177.png')">
-    <div class="container" style="right: 0px;left: 0px;">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <div class="brand">
-                    <h1 class="description center-align post-title">WebGoat03-Cryptographic Failures</h1>
-                </div>
+            <div class="description center-align">
+                
+                    
+                
             </div>
         </div>
     </div>
 </div>
 
 
+<script>
+    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/medias/banner/0.jpg)');
+</script>
 
 
-<main class="post-container content">
+    </div>
+</div>
+
+
+<main class="content">
 
     
-    <div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
-<div id="artDetail">
-    <div class="card">
-        <div class="card-content article-info">
-            <div class="row tag-cate">
-                <div class="col s7">
-                    
-                    <div class="article-tag">
-                        
-                            <a href="/tags/JavaSec/">
-                                <span class="chip bg-color">JavaSec</span>
-                            </a>
-                        
-                            <a href="/tags/WebGoat/">
-                                <span class="chip bg-color">WebGoat</span>
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/JavaSec/" class="post-category">
-                                JavaSec
-                            </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
 
-            <div class="post-info">
-                
-                <div class="post-date info-break-policy">
-                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-21
-                </div>
-                
+    
 
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    440
-                </div>
-                
-
-                
-                <div class="info-break-policy">
-                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
-                </div>
-                
-
-                
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
-            </div>
-        </div>
-        <hr class="clearfix">
-
-        
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/prism/prism.min.css">
-        
-
-        
-
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <p>这一关介绍了Web应用中的常见加密技术，快速过一遍。</p>
-<h1 id="一、Base64"><a href="#一、Base64" class="headerlink" title="一、Base64"></a>一、Base64</h1><p>会用在线网站就行：<a target="_blank" rel="noopener" href="https://base64.us/">https://base64.us/</a></p>
-<h1 id="二、其他的编码"><a href="#二、其他的编码" class="headerlink" title="二、其他的编码"></a>二、其他的编码</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311202216754.png"></p>
-<p>xor那个网站默认密钥是_。</p>
-<h1 id="三、Hash"><a href="#三、Hash" class="headerlink" title="三、Hash"></a>三、Hash</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311202239993.png"></p>
-<p>第一个是md5，admin</p>
-<p>第二个是SHA-256，secret</p>
-<p>多试几个就行。</p>
-<h1 id="四、对称加密-非对称加密"><a href="#四、对称加密-非对称加密" class="headerlink" title="四、对称加密&amp;非对称加密"></a>四、对称加密&amp;非对称加密</h1><p><img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311212042295.png"></p>
-<h1 id="五、签名"><a href="#五、签名" class="headerlink" title="五、签名"></a>五、签名</h1><p>直接复制了。</p>
-<p>第一步：先把题目中给的私钥文本保存为test.key文件</p>
-<p><strong>#echo “—–BEGIN PRIVATE KEY—–<br>MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCQULWL5WKQ3KwUDAbM9uDRNcjFPPpi4aKg1j5oLfRzF8FddBUpVaGS3kQocQnceLsUSxJwr5XiwrSgfX79wJ9WXNaj3S0Zt+LBhB+2t8kzlIrbqNalXd6GztCkqzHHisrEoMDrwxTRAYxES+GzYSs5XvWaXybYkGh1weVSrFYMNujZEmk9nXfgKV9uJ1QP8RSlIvr4s8FqhMHPgpGMKo1ncufYcZBdZ0fgtsMXCHXFA&#x2F;XBI3Vq&#x2F;VfgN8&#x2F;r53pRjE1k5W4&#x2F;LM51GrFRCYKJYE83&#x2F;utQq99zLJWls8WAuiEhiCTa3zn4+eWLRbt5QwYZuv4+YL0Dd&#x2F;pbL8GvcNKF5GY3AgEDAoIBABgNc5dQ5cLPcgNXVnd+es2I9suKKbslmxrOX7wHqL3ZSuTorjGORZh6YLFoLE9pdINh2GgdQ6XLHhq&#x2F;lSpKxTkPeRtPh4RJUHWWBUkeoYiYwc9GznDk+mvNIsYciEvsdyDFdXygg3gq7LYMpZ3lhzQ6fkRlMSQYEWj1pjhyDldeOz2QDr1iYsqsEP1VQkCnIo1AU3+a0Tv5klbArRKTOI+SFoA8YRn0pFHXhtgTIxkLwuKzonxc&#x2F;EeqM8c7oM1zSkzT&#x2F;+NJGyiwdZF6glMh2S5&#x2F;VRC5xsjHKRusHKa1X6ZohknEyvvOsji2SD1G00jo6uQX5aSMN322wv15brgSWlsCgYEA4cG8Fa3CMELVVrNy7g8SKy2DT0ecIrDXZvP+IX1G2vU+3&#x2F;RFrt4y8XmhTpXA2U4qz9AomnUTMRZk2HVtcQ+9G0zhDfUEOhdWtRFn67M0PYMrOFVJp8pb&#x2F;2T63g7+TrprdBpvKqJUOkNxhnFpf6ZDfz9yIIfyjugrdUtWZ0FXe2cCgYEAo6X1+x+M9t1Losq02Hz0GigdtrN2t1HT7NMAYZ9wXxTHgOLBmuN4fHwIS3DUyeCSlKDFDAu8PRvVwMsURHEbdEsMYPZx8WmhOtbCiONg+p3XtJcHjvQln5qwO4l7lICpiwXTTW&#x2F;NffOOg5gwkr4B&#x2F;aZfOqA8HoC7unNB0vQezLECgYEAloEoDnPWytc45Heh9AoMHMkCNNpoFyCPmff+wP4vPKN&#x2F;P&#x2F;gudJQh9lEWNGPV5jQciorFvE4My2RDOvjzoLUovN3rXqNYJro5zguanSIi06zHeuOGb9w9VO38lAn+3ybyTWb0xxbi0YJLrvZGVRmCVNT2wFqhtJrHo4eO74Dk&#x2F;O8CgYBtGU6nal356N0XMc3lqKK8Gr55zPnPi+Kd4gBBFPWUuIUAlyu8l6WoUrAySziGlbcNwINdXSgovTkrMg2C9hJNh12V+aFLm8DR5IGwl5X8aTp4ZK+0osO&#x2F;vHV9BlJjAHEHWTeI9TOpTQmtECBh1AFTxD98atK&#x2F;AH0m94E3TWndywKBgQCbcLHMXjowV&#x2F;SOjcYPbVVnzxNE8SO+IKqIUTqVo5kJHY05At8wd2dVN1vm+gTItmFBmDDEfn4msOtBedC99gOo7LV3TqvibK48FfswxrGBvwjct+FX5nXMZbcXiu1S6XnoOyz5VZ3i9MLTYcOzTqCTqH&#x2F;sQcgeLPtjhiKg1rKTZQ&#x3D;&#x3D;<br>—–END PRIVATE KEY—–” &gt;&gt;test.key</strong></p>
-<p>第二步：通过私钥生成公钥文件</p>
-<p><strong>#openssl rsa -in test.key -pubout&gt;test.pub</strong></p>
-<p>(在ras算法中，私钥是可以生成出公钥的，具体原理大家自行研究)</p>
-<p>第三步：提取公钥中的modulus信息</p>
-<p><strong>#openssl rsa -in test.pub -pubin -modulus -noout</strong></p>
-<p>Modulus&#x3D;9050B58BE56290DCAC140C06CCF6E0D135C8C53CFA62E1A2A0D63E682DF47317C15D74152955A192DE44287109DC78BB144B1270AF95E2C2B4A07D7EFDC09F565CD6A3DD2D19B7E2C1841FB6B7C933948ADBA8D6A55DDE86CED0A4AB31C78ACAC4A0C0EBC314D1018C444BE1B3612B395EF59A5F26D8906875C1E552AC560C36E8D912693D9D77E0295F6E27540FF114A522FAF8B3C16A84C1CF82918C2A8D6772E7D871905D6747E0B6C3170875C503F5C123756AFD57E037CFEBE77A518C4D64E56E3F2CCE751AB151098289604F37FEEB50ABDF732C95A5B3C580BA21218824DADF39F8F9E58B45BB79430619BAFE3E60BD0377FA5B2FC1AF70D285E46637</p>
-<p>第四步：使用私钥对该modulus信息进行签名计算，并将结果进行base64编码，得到一个私钥签名的签名值的base64编码结果。</p>
-<p>#echo -n “9050B58BE56290DCAC140C06CCF6E0D135C8C53CFA62E1A2A0D63E682DF47317C15D74152955A192DE44287109DC78BB144B1270AF95E2C2B4A07D7EFDC09F565CD6A3DD2D19B7E2C1841FB6B7C933948ADBA8D6A55DDE86CED0A4AB31C78ACAC4A0C0EBC314D1018C444BE1B3612B395EF59A5F26D8906875C1E552AC560C36E8D912693D9D77E0295F6E27540FF114A522FAF8B3C16A84C1CF82918C2A8D6772E7D871905D6747E0B6C3170875C503F5C123756AFD57E037CFEBE77A518C4D64E56E3F2CCE751AB151098289604F37FEEB50ABDF732C95A5B3C580BA21218824DADF39F8F9E58B45BB79430619BAFE3E60BD0377FA5B2FC1AF70D285E46637” |<strong>openssl dgst -sign test.key -sha256 |base64</strong></p>
-<p>输出：</p>
-<p>QGMW7QLooAzANmQIC82NbT8YFHVRK6ZIglUBxW8YEflR2hOwnVu+HbyEowE2G7AuXZBuso9xqWx1<br>UepytuZhxrMon1FP&#x2F;ZBIxdLMaaE5EIpGQtKPZUjo6f28lrU2f0ChFiQR4JLxPGxQSObE&#x2F;co2c6FK<br>cZxp9SpTgs4O7epqAD5as5h+aBo+Qe0qTXm7IrNrMSjJ0RkEN8pto1p1BUTIHzQODtez1VxzjDzO<br>n9Ebdk01GlhofJaC2&#x2F;BGRAsmo4EVICht6e7NG2H5pVrJPhf9UclE&#x2F;bOcgi7dGQT5XZNVr8vjspiT<br>pYYn7rzDKaHO0j8owwPWa7FpyegjqjiZtR&#x2F;N1Q&#x3D;&#x3D;</p>
-<p>这个题主要目的是想让大家搞清楚各种签名认证，通常情况下，签名的算法可能是公开的，但是签名用的秘钥是私密的，如果签名用的共享秘钥、私钥等信息泄露，就会导致签名值被破解，从而伪造合法的签名进行接口调用。</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>纯粹因为强迫症写的这关。</p>
-
-                
-            </div>
-            <hr/>
-
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
             
-
-    <div class="reprint" id="reprint-statement">
-        
-            <div class="reprint__author">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-user">
-                        文章作者:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Troy3e</a>
-                </span>
-            </div>
-            <div class="reprint__type">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-link">
-                        文章链接:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    <a href="https://itroyesivan.github.io/2023/11/21/webgoat03-cryptographic-failures/">https://itroyesivan.github.io/2023/11/21/webgoat03-cryptographic-failures/</a>
-                </span>
-            </div>
-            <div class="reprint__notice">
-                <span class="reprint-meta" style="font-weight: bold;">
-                    <i class="fas fa-copyright">
-                        版权声明:
-                    </i>
-                </span>
-                <span class="reprint-info">
-                    本博客所有文章除特別声明外，均采用
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
-                    许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Troy3e</a>
-                    !
-                </span>
-            </div>
-        
-    </div>
-
-    <script async defer>
-      document.addEventListener("copy", function (e) {
-        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
-        M.toast({html: toastHTML})
-      });
-
-      function navToReprintStatement() {
-        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
-      }
-    </script>
-
-
-
-            <div class="tag_share" style="display: block;">
-                <div class="post-meta__tag-list" style="display: inline-block;">
-                    
-                        <div class="article-tag">
+             <!-- 隐藏某个文章 -->
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2023/10/26/javasec-ji-chu-01-io-liu/">
+                        <div class="card-image">
                             
-                                <a href="/tags/JavaSec/">
-                                    <span class="chip bg-color">JavaSec</span>
-                                </a>
+                            <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311031931020.jpg" class="responsive-img" alt="JavaSec基础01-IO流">
                             
-                                <a href="/tags/WebGoat/">
-                                    <span class="chip bg-color">WebGoat</span>
-                                </a>
+                            <span class="card-title">JavaSec基础01-IO流</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                Java-I&#x2F;O流基础在变量、数组和对象中存储的数据是暂时存在的，程序结束后它们就会被丢失。想要永久地存储程序创建的数据，就需要将其保存在磁盘文件中，而只有数据被存储起来，在其他程序中才可以使用它们。Java的I&#x2F;O技术
                             
                         </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/JavaSec/" class="post-category">
+                                    JavaSec
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/JavaSec/">
+                            <span class="chip bg-color">JavaSec</span>
+                        </a>
+                        
+                    </div>
                     
                 </div>
-                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
-                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/share/css/share.min.css">
-<div id="article-share">
-
-    
-    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
-    <script src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/share/js/social-share.min.js"></script>
-    
-
-    
-
-</div>
-
-                </div>
             </div>
+              <!-- 隐藏某个文章 -->
+            
+        </div>
+    </article>
+
+</main>
+
+
+<div class="container paging">
+    <div class="row">
+        <div class="col s6 m4 l4">
+            
+            <a href="/"
+               class="left btn-floating btn-large waves-effect waves-light bg-color">
+                <i class="fas fa-angle-left"></i>
+            </a>
+            
+        </div>
+        <div class="page-info col m4 l4 hide-on-small-only">
+            <div class="center-align b-text-gray">2 / 2</div>
+        </div>
+        <div class="col s6 m4 l4">
+            
+            <a class="right btn-floating btn-large disabled">
+                <i class="fas fa-angle-right"></i>
+            </a>
             
         </div>
     </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
-            <div class="card">
-                <a href="/2023/11/26/cc-lian-2-commonscollections6-li-yong-lian-fen-xi/">
-                    <div class="card-image">
-                        
-                        <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311262022521.jpeg" class="responsive-img" alt="CC链2-CommonsCollections6利用链分析">
-                        
-                        <span class="card-title">CC链2-CommonsCollections6利用链分析</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-26
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaSec/">
-                        <span class="chip bg-color">JavaSec</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/11/19/cc-lian-1-commonscollections1-li-yong-lian-fen-xi/">
-                    <div class="card-image">
-                        
-                        <img src="https://picgo-1300397932.cos.ap-nanjing.myqcloud.com/picgo/202311191741081.jpeg" class="responsive-img" alt="CC链1-CommonsCollections1利用链分析">
-                        
-                        <span class="card-title">CC链1-CommonsCollections1利用链分析</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-19
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/JavaSec/" class="post-category">
-                                    JavaSec
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/JavaSec/">
-                        <span class="chip bg-color">JavaSec</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
-</article>
-
 </div>
-
-
-
-<!-- 代码块功能依赖 -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/codeBlock/codeBlockFuction.js"></script>
-
-
-  <!-- 是否加载使用自带的 prismjs. -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/prism/prism.min.js"></script>
-
-
-<!-- 代码语言 -->
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/codeBlock/codeLang.js"></script>
-
-
-<!-- 代码块复制 -->
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/codeBlock/codeCopy.js"></script>
-
-
-<!-- 代码块收缩 -->
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/codeBlock/codeShrink.js"></script>
-
-
-
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="https://cdn.jsdelivr.net/gh/ITroyeSivan/ITroyeSivan.github.io/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
-
-    
-
-</main>
 
 
 
